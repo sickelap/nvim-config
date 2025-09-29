@@ -86,4 +86,47 @@ return {
     },
     cmd = { "CoAuthor" },
   },
+
+  {
+    "zk-org/zk-nvim",
+    config = function()
+      require("zk").setup {
+        picker_options = {
+          telescope = require("telescope.themes").get_ivy(),
+          -- or if you use snacks picker
+          -- snacks_picker = {
+          --   layout = {
+          --     preset = "ivy",
+          --   },
+          -- },
+        },
+      }
+    end,
+  },
+
+  { "renerocksai/calendar-vim" },
+
+  { "nvim-telescope/telescope-symbols.nvim" },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
+  { "mzlogin/vim-markdown-toc" },
+
+  {
+    "prochri/telescope-all-recent.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "kkharji/sqlite.lua",
+      -- optional, if using telescope for vim.ui.select
+      "stevearc/dressing.nvim",
+    },
+    opts = {
+      -- your config goes here
+    },
+  },
 }
