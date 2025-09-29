@@ -78,4 +78,12 @@ return {
       virtual_text_column = 1,
     },
   },
+
+  {
+    "2kabhishek/co-author.nvim",
+    dependencies = {
+      "folke/snacks.nvim",
+    },
+    cmd = { "CoAuthor" },
+  },
 }
