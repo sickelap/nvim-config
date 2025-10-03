@@ -108,11 +108,16 @@ return {
 
   { "nvim-telescope/telescope-symbols.nvim" },
 
+  -- {
+  --   "iamcco/markdown-preview.nvim",
+  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+  --   ft = { "markdown" },
+  --   build = function() vim.fn["mkdp#util#install"]() end,
+  -- },
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
+    opts = {},
   },
 
   { "mzlogin/vim-markdown-toc" },
@@ -128,5 +133,9 @@ return {
     opts = {
       -- your config goes here
     },
+  },
+
+  {
+    "sindrets/diffview.nvim",
   },
 }
