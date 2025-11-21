@@ -138,4 +138,23 @@ return {
   {
     "sindrets/diffview.nvim",
   },
+
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    lazy = false,
+    opts = {},
+    config = function()
+      vim.keymap.set("n", "<leader>r", function()
+        if next(vim.lsp.get_clients { bufnr = 0 }) ~= nil then
+          require("telescope").extensions.refactoring.refactors()
+        else
+          print "LSP is not attached"
+        end
+      end, { desc = "Show Refactorings" })
+    end,
+  },
 }

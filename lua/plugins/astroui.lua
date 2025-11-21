@@ -9,6 +9,8 @@ return {
     highlights = {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
+        DiagnosticVirtualTextHint = { fg = "#888888" },
+        LspInlayHint = { fg = "#777777", italic = true },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
