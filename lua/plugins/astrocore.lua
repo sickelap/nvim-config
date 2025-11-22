@@ -72,6 +72,7 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+        ["<Leader>H"] = { desc = "Harpoon" },
       },
     },
   },

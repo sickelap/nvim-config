@@ -87,33 +87,10 @@ return {
     cmd = { "CoAuthor" },
   },
 
-  {
-    "zk-org/zk-nvim",
-    config = function()
-      require("zk").setup {
-        picker_options = {
-          telescope = require("telescope.themes").get_ivy(),
-          -- or if you use snacks picker
-          -- snacks_picker = {
-          --   layout = {
-          --     preset = "ivy",
-          --   },
-          -- },
-        },
-      }
-    end,
-  },
-
   { "renerocksai/calendar-vim" },
 
   { "nvim-telescope/telescope-symbols.nvim" },
 
-  -- {
-  --   "iamcco/markdown-preview.nvim",
-  --   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  --   ft = { "markdown" },
-  --   build = function() vim.fn["mkdp#util#install"]() end,
-  -- },
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
@@ -155,6 +132,81 @@ return {
           print "LSP is not attached"
         end
       end, { desc = "Show Refactorings" })
+    end,
+  },
+
+  {
+    "stevearc/oil.nvim",
+  },
+
+  {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      autocmds = {
+        neotree_grep = {
+          {
+            event = "FileType",
+            pattern = "neo-tree",
+            desc = "Add <leader>fw to grep inside selected folder in Neo-tree",
+            callback = function()
+              vim.keymap.set("n", "<leader>fw", function()
+                local manager = require "neo-tree.sources.manager"
+                local state = manager.get_state "filesystem"
+                local node = state.tree:get_node()
+                if not node then
+                  vim.notify("No node selected in Neo-tree", vim.log.levels.WARN)
+                  return
+                end
+
+                local path = node:get_id()
+                local is_dir = node.type == "directory" or vim.fn.isdirectory(path) == 1
+                local dir = is_dir and path or vim.fn.fnamemodify(path, ":h")
+
+                require("telescope.builtin").live_grep {
+                  search_dirs = { dir },
+                  prompt_title = "Grep in " .. dir,
+                }
+              end, { buffer = true, desc = "Live grep in selected Neo-tree folder" })
+            end,
+          },
+        },
+      },
+    },
+  },
+
+  {
+    "dstein64/nvim-scrollview",
+  },
+
+  {
+    "rayliwell/tree-sitter-rstml",
+  },
+
+  {
+    "nvim-telekasten/telekasten.nvim",
+    config = function()
+      require("telekasten").setup {
+        home = vim.fn.expand "~/Documents/zettelkasten",
+      }
+    end,
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("telescope").load_extension "harpoon"
+      vim.keymap.set(
+        "n",
+        "<leader>Hh",
+        function() require("harpoon.ui").toggle_quick_menu() end,
+        { desc = "Quick menu" }
+      )
+      vim.keymap.set("n", "<leader>Hf", function() require("harpoon.ui").add_file() end, { desc = "Add file" })
     end,
   },
 }
