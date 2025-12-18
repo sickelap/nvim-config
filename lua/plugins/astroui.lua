@@ -14,6 +14,7 @@ return {
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
+        Comment = { fg = "#6A9955", italic = true }, -- your custom color
       },
     },
     -- Icons can be configured throughout the interface
