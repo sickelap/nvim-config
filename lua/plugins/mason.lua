@@ -14,6 +14,11 @@ return {
         -- install language servers
         "lua-language-server",
         "pyright",
+        "rust-analyzer",
+        "intelephense",
+        "jq",
+        "marksman",
+        "phpstan",
 
         -- install formatters
         "stylua",

@@ -209,4 +209,21 @@ return {
       vim.keymap.set("n", "<leader>Hf", function() require("harpoon.ui").add_file() end, { desc = "Add file" })
     end,
   },
+
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
+    opts = {
+      model = "GPT-5-Codex", -- AI model to use
+      temperature = 0.1, -- Lower = focused, higher = creative
+      window = {
+        layout = "vertical", -- 'vertical', 'horizontal', 'float'
+        width = 0.4, -- 40% of screen width
+      },
+      -- auto_insert_mode = true, -- Enter insert mode when opening
+    },
+  },
 }
