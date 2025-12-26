@@ -229,4 +229,8 @@ return {
       -- auto_insert_mode = true, -- Enter insert mode when opening
     },
   },
+
+  {
+    "lewis6991/hover.nvim",
+  },
 }
