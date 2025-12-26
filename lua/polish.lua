@@ -40,3 +40,8 @@ vim.keymap.set(
   function() vim.diagnostic.open_float(nil, { focus = false }) end,
   { desc = "Show Diagnostocs" }
 )
+vim.keymap.set("n", "<leader>gn", "<cmd>Gitsigns next_hunk<cr>", { desc = "Next hunk" })
+vim.keymap.set("n", "<leader>gp", "<cmd>Gitsigns prev_hunk<cr>", { desc = "Prev hunk" })
+
+vim.keymap.set("v", "<C-Up>", "<cmd>m -2<cr>")
+vim.keymap.set("v", "<C-Down>", "<cmd>m +1<cr>")
