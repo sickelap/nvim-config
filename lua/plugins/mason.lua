@@ -19,6 +19,7 @@ return {
         "jq",
         "marksman",
         "phpstan",
+        "docker-compose-language-service",
 
         -- install formatters
         "stylua",

@@ -8,13 +8,15 @@ return {
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
         DiagnosticVirtualTextHint = { fg = "#888888" },
         LspInlayHint = { fg = "#777777", italic = true },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#000000" },
-        Comment = { fg = "#6A9955", italic = true }, -- your custom color
+        Comment = { fg = "#6A9955", italic = true },
+
+        -- unused variables
+        DiagnosticUnnecessary = { fg = "#898989" }, -- legacy
+        DiagnosticUnused = { fg = "#898989" },
       },
     },
     -- Icons can be configured throughout the interface
