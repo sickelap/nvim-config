@@ -5,10 +5,6 @@ return {
   },
 
   {
-    "stevearc/oil.nvim",
-  },
-
-  {
     "dstein64/nvim-scrollview",
   },
 }
