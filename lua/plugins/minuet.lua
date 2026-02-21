@@ -41,6 +41,7 @@ return {
       },
       lsp = {
         enabled_ft = { "*" },
+        warn_on_blink_or_cmp = false,
       },
     }
   end,
