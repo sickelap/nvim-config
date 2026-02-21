@@ -1,10 +1,13 @@
 ---@type LazySpec
 return {
   {
-    "sindrets/diffview.nvim",
-  },
-
-  {
-    "dstein64/nvim-scrollview",
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        preset = {
+          header = "",
+        },
+      },
+    },
   },
 }

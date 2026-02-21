@@ -1,16 +1,26 @@
--- Customize Treesitter
-
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
     ensure_installed = {
+      "bash",
+      "c",
+      "dockerfile",
+      "jinja",
+      "json",
+      "json5",
+      "jsonc",
       "lua",
-      "vim",
-      -- add more arguments for adding more treesitter parsers
+      "luap",
+      "make",
+      "markdown",
+      "markdown_inline",
+      "php",
       "python",
-      "typescript",
-      -- "typescript.react",
+      "query",
+      "vim",
+      "vimdoc",
+      "yaml",
     },
   },
 }

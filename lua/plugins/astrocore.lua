@@ -28,16 +28,19 @@ return {
       },
       pattern = {
         [".*/etc/foo/.*"] = "fooscript",
+        [".*/docker%-compose.*%.ya?ml"] = "yaml.docker-compose",
+        [".*/compose.*%.ya?ml"] = "yaml.docker-compose",
+        [".*%.j2"] = "jinja",
       },
     },
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
+        relativenumber = false, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
+        spell = true, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-        wrap = false, -- sets vim.opt.wrap
+        wrap = true, -- sets vim.opt.wrap
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
