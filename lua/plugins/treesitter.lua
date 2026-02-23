@@ -6,6 +6,7 @@ return {
       "bash",
       "c",
       "dockerfile",
+      "http",
       "jinja",
       "json",
       "json5",
