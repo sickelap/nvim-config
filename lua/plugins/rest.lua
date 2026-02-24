@@ -17,17 +17,7 @@ return {
         end)
       end
 
-      local lspconfig = require "lspconfig"
-      if not lspconfig.configs.kulala_ls then
-        lspconfig.configs.kulala_ls = {
-          default_config = {
-            cmd = { "kulala-ls" },
-            filetypes = { "http" },
-          },
-        }
-      end
-
-      lspconfig.kulala_ls.setup {}
+      require("lspconfig").kulala_ls.setup {}
     end,
   },
 
