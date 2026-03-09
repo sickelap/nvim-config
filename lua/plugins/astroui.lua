@@ -6,6 +6,10 @@ return {
     opts = {
       -- change colorscheme
       colorscheme = "astrodark",
+      folding = {
+        enabled = function(bufnr) return require("astrocore.buffer").is_valid(bufnr) end,
+        methods = { "lsp", "treesitter", "indent" },
+      },
       -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
       highlights = {
         init = { -- this table overrides highlights in all themes
@@ -18,6 +22,8 @@ return {
           -- unused variables
           DiagnosticUnnecessary = { fg = "#898989" }, -- legacy
           DiagnosticUnused = { fg = "#898989" },
+          -- visual = { bg = "#563453", fg = "#CCCCCC" },
+          visual = { bg = "#242f3c", fg = "#DDDDDD" },
         },
       },
       -- Icons can be configured throughout the interface

@@ -9,3 +9,10 @@ vim.keymap.set(
   function() vim.diagnostic.open_float(nil, { focus = false }) end,
   { desc = "Show Diagnostocs" }
 )
+
+vim.opt.fillchars.eob = "  "
+vim.opt.fillchars.fold = "  "
+vim.opt.fillchars.foldopen = " "
+vim.opt.fillchars.foldsep = "  "
+vim.opt.fillchars.foldinner = "  "
+vim.opt.fillchars.foldclose = " "

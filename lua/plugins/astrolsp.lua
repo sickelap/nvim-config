@@ -40,23 +40,6 @@ return {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       intelephense = {
         root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
-        settings = {
-          files = {
-            maxSize = 5000000,
-          },
-          diagnostics = {
-            undefinedTypes = false,
-            undefinedFunctions = false,
-            undefinedConstants = false,
-            undefinedClassConstants = false,
-            undefinedMethods = false,
-            undefinedProperties = false,
-            undefinedVariables = false,
-          },
-          environment = {
-            phpVersion = "8.2", -- set to your project default
-          },
-        },
       },
     },
     -- customize how language servers are attached

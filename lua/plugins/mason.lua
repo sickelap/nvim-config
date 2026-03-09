@@ -13,7 +13,7 @@ return {
         "jq",
         "lua-language-server",
         "marksman",
-        "phpstan",
+        -- "phpstan",
         "pyright",
         "ruff",
         "rust-analyzer",
