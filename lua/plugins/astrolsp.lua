@@ -41,6 +41,9 @@ return {
       intelephense = {
         root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
       },
+      phpactor = {
+        enabled = false,
+      },
     },
     -- customize how language servers are attached
     handlers = {
