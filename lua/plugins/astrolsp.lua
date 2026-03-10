@@ -101,4 +101,17 @@ return {
       -- client.server_capabilities.semanticTokensProvider = nil
     end,
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      server_opts_overrides = {
+        settings = {
+          telemetry = {
+            telemetryLevel = "off",
+          },
+        },
+      },
+    },
+  },
 }
