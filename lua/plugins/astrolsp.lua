@@ -53,6 +53,7 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      phpactor = false,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
@@ -84,6 +85,11 @@ return {
           function() vim.lsp.buf.declaration() end,
           desc = "Declaration of current symbol",
           cond = "textDocument/declaration",
+        },
+        gd = {
+          function() require("snacks.picker").lsp_definitions() end,
+          desc = "Definitions",
+          cond = "textDocument/definition",
         },
         ["<Leader>uY"] = {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
