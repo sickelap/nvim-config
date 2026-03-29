@@ -15,7 +15,6 @@ return {
       "make",
       "markdown",
       "markdown_inline",
-      "php",
       "python",
       "query",
       "vim",
