@@ -5,6 +5,6 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.php" },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.completion.copilot-cmp" },
+  -- { import = "astrocommunity.completion.copilot-cmp" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
 }
