@@ -108,16 +108,16 @@ return {
     end,
   },
 
-  {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      server_opts_overrides = {
-        settings = {
-          telemetry = {
-            telemetryLevel = "off",
-          },
-        },
-      },
-    },
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   opts = {
+  --     server_opts_overrides = {
+  --       settings = {
+  --         telemetry = {
+  --           telemetryLevel = "off",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
 }
