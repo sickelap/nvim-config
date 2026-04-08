@@ -13,6 +13,8 @@ return {
       -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
       highlights = {
         init = { -- this table overrides highlights in all themes
+          NormalFloat = { bg = "#1e1e2e" }, -- background
+          FloatBorder = { fg = "#FFFF00", bg = "#1e1e2e" },
           DiagnosticVirtualTextHint = { fg = "#888888" },
           LspInlayHint = { fg = "#777777", italic = true },
         },
