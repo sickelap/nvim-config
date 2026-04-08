@@ -23,7 +23,8 @@ return {
           DiagnosticUnnecessary = { fg = "#898989" }, -- legacy
           DiagnosticUnused = { fg = "#898989" },
           -- visual = { bg = "#563453", fg = "#CCCCCC" },
-          visual = { bg = "#242f3c", fg = "#DDDDDD" },
+          -- visual = { bg = "#242f3c", fg = "#DDDDDD" },
+          visual = { bg = "#353535" },
         },
       },
       -- Icons can be configured throughout the interface
