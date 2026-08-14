@@ -9,6 +9,7 @@ return {
       ensure_installed = {
         "debugpy",
         "docker-compose-language-service",
+        "circleci-yaml-language-server",
         "intelephense",
         "jq",
         "lua-language-server",

@@ -79,4 +79,9 @@ return {
       opts.mappings = maps
     end,
   },
+
+  {
+    "comatory/gh-co.nvim",
+    config = function() vim.keymap.set("n", "<leader>gw", ":GhCoWho<CR>", {}) end,
+  },
 }
