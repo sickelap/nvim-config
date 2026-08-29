@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   {
-    "neovim/nvim-lspconfig",
+    "AstroNvim/astrocore",
     opts = function()
       vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
         pattern = { "*/.circleci/config.yml", "*/.circleci/config.yaml" },

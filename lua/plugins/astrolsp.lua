@@ -34,25 +34,16 @@ return {
     servers = {
       -- "pyright"
     },
-    -- customize language server configuration options passed to `lspconfig`
-    ---@diagnostic disable: missing-fields
+    -- customize language server configuration passed to `vim.lsp.config`
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       intelephense = {
-        root_dir = require("lspconfig.util").root_pattern("composer.json", ".git"),
-      },
-      phpactor = {
-        enabled = false,
+        root_markers = { "composer.json", ".git" },
       },
     },
     -- customize how language servers are attached
     handlers = {
-      -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
-      -- function(server, opts) require("lspconfig")[server].setup(opts) end
-
-      -- the key is the server that is being setup with `lspconfig`
+      -- the key is the server that is being setup with `vim.lsp.config`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-      -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
       phpactor = false,
     },
     -- Configure buffer local auto commands to add when attaching a language server
@@ -72,7 +63,7 @@ return {
           -- the rest of the autocmd options (:h nvim_create_autocmd)
           desc = "Refresh codelens (buffer)",
           callback = function(args)
-            if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
+            if require("astrolsp").config.features.codelens then vim.lsp.codelens.enable(true, { bufnr = args.buf }) end
           end,
         },
       },
@@ -95,7 +86,7 @@ return {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
           desc = "Toggle LSP semantic highlight (buffer)",
           cond = function(client)
-            return client.supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
+            return client:supports_method "textDocument/semanticTokens/full" and vim.lsp.semantic_tokens ~= nil
           end,
         },
       },

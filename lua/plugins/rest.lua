@@ -1,10 +1,6 @@
 return {
   {
     "lima1909/resty.nvim",
-  },
-
-  {
-    "neovim/nvim-lspconfig",
     config = function()
       if vim.fn.executable "kulala-ls" == 0 then
         vim.notify("Installing kulala-ls...", vim.log.levels.INFO)
@@ -16,8 +12,17 @@ return {
           end
         end)
       end
+    end,
+  },
 
-      require("lspconfig").kulala_ls.setup {}
+  {
+    "AstroNvim/astrolsp",
+    opts = function(_, opts)
+      opts.servers = opts.servers or {}
+      opts.servers = require("astrocore").list_insert_unique(opts.servers, { "kulala_ls" })
+      opts.config = opts.config or {}
+      opts.config.kulala_ls = opts.config.kulala_ls or {}
+      return opts
     end,
   },
 
