@@ -1,2 +1,4 @@
 ---@type LazySpec
-return {}
+return {
+  "nvim-telescope/telescope.nvim",
+}
